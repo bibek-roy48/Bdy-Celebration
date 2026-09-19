@@ -1,0 +1,1100 @@
+/* Main App Container */
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #181416;
+  overflow: hidden;
+  padding: 10px 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Phone Wrapper matching iPhone proportions */
+.phone-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 420px;
+  height: 96vh;
+  max-height: 920px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/* Phone Screen Card */
+.phone-screen-card {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  background-color: #faf7fa;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* Screen Content Area */
+.screen-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Single Scrapbook View */
+.single-scrapbook-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Multi-Page Slider Track */
+.phone-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.phone-slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE 1 STYLES (Balloon Banner & Keychains)
+   ========================================================= */
+.page-1-slide {
+  background-color: #faf7fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-1-slide::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  right: -16px;
+  bottom: -16px;
+  background-image: url('/assets/stars-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  transform: scale(1.04);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.keychain-top-container {
+  position: absolute;
+  top: -15px;
+  left: -4px;
+  width: 275px;
+  height: 365px;
+  z-index: 20;
+  touch-action: none;
+  filter: drop-shadow(13px 18px 4px rgba(35, 20, 28, 0.45));
+}
+
+.keychain-top-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.balloon-banner-container {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 395px;
+  z-index: 15;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  filter: drop-shadow(13px 18px 4px rgba(35, 20, 28, 0.48));
+  transition: filter 0.3s ease;
+}
+
+.balloon-banner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.balloon-banner img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.balloon-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  opacity: 0.5;
+  animation: shimmerSweep 5s infinite ease-in-out;
+}
+
+.keychain-bottom-container {
+  position: absolute;
+  bottom: -62px;
+  left: -68px;
+  width: 440px;
+  height: 530px;
+  z-index: 20;
+  touch-action: none;
+  filter: drop-shadow(13px 18px 4px rgba(35, 20, 28, 0.45));
+}
+
+.keychain-bottom-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  transform: rotate(-45deg);
+  transform-origin: 50% 50%;
+}
+
+.page-peek-hint {
+  position: absolute;
+  bottom: 24px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  color: #6d4b58;
+  font-size: 0.78rem;
+  font-weight: 700;
+  z-index: 25;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  animation: pulseHint 2.5s infinite;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.page-peek-hint:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateX(3px) scale(1.03);
+}
+
+.hint-arrow {
+  animation: bounceX 1.2s infinite;
+}
+
+/* =========================================================
+   PAGE 2 STYLES (Exact Aesthetic Scrapbook Collage)
+   ========================================================= */
+.page-2-slide {
+  background: linear-gradient(180deg, #fba9bb 0%, #fca2b6 40%, #f990a8 100%);
+  position: relative;
+}
+
+.exact-scrapbook-layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrapbook-bg-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.25) 0%, transparent 75%);
+  pointer-events: none;
+}
+
+/* 1. TOP-LEFT: Cherry Bow (Larger presence) */
+.layout-cherry-bow {
+  position: absolute;
+  top: -16px;
+  left: -20px;
+  width: 175px;
+  transform: rotate(-6deg);
+  z-index: 16;
+  cursor: pointer;
+  filter: drop-shadow(6px 14px 10px rgba(45, 15, 25, 0.38));
+}
+
+/* 2. TOP-CENTER: Polaroid Top (Increased height & width) */
+.layout-polaroid-top {
+  position: absolute;
+  top: 30px;
+  left: 57%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 200px;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  filter: drop-shadow(0 16px 30px rgba(45, 15, 28, 0.44));
+  will-change: transform;
+}
+
+/* 3. TOP-RIGHT: Leopard Star (Larger presence) */
+.layout-leopard-star {
+  position: absolute;
+  top: -28px;
+  right: -28px;
+  width: 185px;
+  transform: rotate(18deg);
+  z-index: 15;
+  cursor: pointer;
+  filter: drop-shadow(6px 14px 12px rgba(45, 15, 25, 0.38));
+}
+
+/* 4. MID-RIGHT: Red Gingham Keychain (Much taller & larger) */
+.layout-red-keychain {
+  position: absolute;
+  top: 185px;
+  right: -20px;
+  width: 195px;
+  height: 350px;
+  transform-origin: 50% 0%;
+  z-index: 22;
+  cursor: pointer;
+  filter: drop-shadow(12px 20px 14px rgba(45, 18, 28, 0.44));
+}
+
+/* 5. MID-LEFT: Polaroid Mid (Increased height & width) */
+.layout-polaroid-mid {
+  position: absolute;
+  top: 305px;
+  left: 12px;
+  width: 215px;
+  transform: rotate(-2deg);
+  z-index: 12;
+  cursor: pointer;
+  user-select: none;
+  filter: drop-shadow(0 18px 36px rgba(45, 15, 28, 0.46));
+  will-change: transform;
+}
+
+/* 6. BOTTOM-LEFT: Swirl Candy Keychain (Much taller & larger) */
+.layout-swirl-keychain {
+  position: absolute;
+  bottom: -28px;
+  left: -26px;
+  width: 190px;
+  height: 245px;
+  transform-origin: 30% 100%;
+  z-index: 22;
+  cursor: pointer;
+  filter: drop-shadow(10px 18px 12px rgba(45, 18, 28, 0.4));
+}
+
+/* 7. BOTTOM-RIGHT: Polaroid Bottom (Increased height & width) */
+.layout-polaroid-bottom {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 215px;
+  transform: rotate(1.5deg);
+  z-index: 12;
+  cursor: pointer;
+  user-select: none;
+  filter: drop-shadow(0 18px 36px rgba(45, 15, 28, 0.46));
+  will-change: transform;
+}
+
+/* Common Polaroid Inner Photo and Frame Overlay */
+.layout-photo-under {
+  position: absolute;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.actual-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bnw-boost {
+  filter: contrast(108%) brightness(102%);
+}
+
+.actual-frame-overlay {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.keychain-asset-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.sticker-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================================================
+   NAVIGATION CONTROLS (Top Pill, Side Arrows & Bottom Dots)
+   ========================================================= */
+.page-nav-bar {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  padding: 3px;
+  border-radius: 24px;
+  z-index: 30;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.page-nav-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.page-nav-tab span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7b5364;
+  letter-spacing: 0.4px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.page-nav-tab.active {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(255, 105, 180, 0.35);
+  transform: scale(1.05);
+}
+
+.page-nav-tab.active span {
+  color: #ff3377;
+  font-weight: 700;
+}
+
+.page-nav-tab:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+.tab-icon {
+  stroke-width: 2.2;
+}
+
+.page-slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  color: #6a4a56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 30;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease;
+}
+
+.page-slide-arrow:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.page-dots-indicator {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 30;
+}
+
+.page-dots-indicator .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-dots-indicator .dot.active {
+  width: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================================
+   MUSIC TOGGLE BUTTON
+   ========================================================= */
+.music-toggle-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  color: #55444a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 32;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.music-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.08);
+}
+
+.music-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* =========================================================
+   PHOTO ZOOM MODAL
+   ========================================================= */
+.photo-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 10, 15, 0.68);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+.photo-modal-card {
+  position: relative;
+  background: #fffafa;
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  border: 2px solid rgba(255, 182, 193, 0.7);
+  animation: modalScaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #ffd1dc;
+  color: #886070;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #ff4d88;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.modal-frame-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111;
+  aspect-ratio: 4/5;
+}
+
+.modal-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-text-content {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.modal-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.modal-title-row h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #4a2837;
+  font-weight: 700;
+}
+
+.modal-heart-btn {
+  background: rgba(255, 105, 180, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.modal-heart-btn:hover {
+  transform: scale(1.2);
+}
+
+.modal-caption {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #7d5a6b;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+/* =========================================================
+   ANIMATIONS & KEYFRAMES
+   ========================================================= */
+@keyframes shimmerSweep {
+  0% { transform: translateX(-150%) skewX(-25deg); }
+  100% { transform: translateX(250%) skewX(-25deg); }
+}
+
+@keyframes pulseHint {
+  0%, 100% { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1); }
+  50% { box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4); }
+}
+
+@keyframes bounceX {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScaleUp {
+  from { opacity: 0; transform: scale(0.88); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================= */
+@media (max-width: 480px) {
+  .app-container {
+    background-color: #181416;
+    padding: 0;
+  }
+
+  .phone-wrapper {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100dvh;
+    width: 100vw;
+  }
+
+  .phone-screen-card {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Page 1 Mobile */
+  .keychain-top-container {
+    top: -15px;
+    left: -4px;
+    width: 250px;
+    height: 335px;
+  }
+
+  .balloon-banner-container {
+    width: 95%;
+    max-width: 360px;
+  }
+
+  .keychain-bottom-container {
+    bottom: -15px;
+    left: -20px;
+    width: 330px;
+    height: 420px;
+  }
+
+  /* Page 2 Mobile */
+  .layout-cherry-bow {
+    width: 130px;
+    top: -10px;
+    left: -12px;
+  }
+
+  .layout-polaroid-top {
+    width: 140px;
+    top: 20px;
+  }
+
+  .layout-leopard-star {
+    width: 135px;
+    top: -20px;
+    right: -20px;
+  }
+
+  .layout-red-keychain {
+    width: 135px;
+    height: 245px;
+    top: 165px;
+  }
+
+  .layout-polaroid-mid {
+    width: 148px;
+    top: 255px;
+    left: 12px;
+  }
+
+  .layout-swirl-keychain {
+    width: 120px;
+    height: 160px;
+    bottom: -18px;
+    left: -14px;
+  }
+
+  .layout-polaroid-bottom {
+    width: 148px;
+    bottom: 14px;
+    right: 14px;
+  }
+}
+
+/* =========================================================
+   PAGE 3 STYLES: Birthday Letter & Treats Selection
+   ========================================================= */
+.page-3-slide {
+  background: linear-gradient(180deg, #fba9bb 0%, #fca2b6 40%, #f990a8 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.treats-letter-page-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 48px 14px 24px 14px;
+  scrollbar-width: none;
+}
+
+.treats-letter-page-container::-webkit-scrollbar {
+  display: none;
+}
+
+.treats-bg-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.28) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.treats-scroll-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 1. Letter Note Section */
+.letter-section-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.letter-note-card {
+  position: relative;
+  width: 98%;
+  max-width: 360px;
+  filter: drop-shadow(12px 20px 24px rgba(35, 10, 20, 0.38));
+  cursor: pointer;
+  transform: rotate(-4.5deg);
+  transform-style: preserve-3d;
+  perspective: 800px;
+  will-change: transform;
+}
+
+.letter-note-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Pinned Beaded Star Ribbon Charm at Upper-Right */
+.letter-pinned-charm {
+  position: absolute;
+  top: -28px;
+  right: -2px;
+  width: 122px;
+  height: 168px;
+  z-index: 18;
+  cursor: grab;
+  touch-action: none;
+  transform-origin: 50% 10%;
+  filter: drop-shadow(8px 14px 18px rgba(35, 10, 20, 0.44));
+  will-change: transform;
+}
+
+.letter-pinned-charm:active {
+  cursor: grabbing;
+}
+
+.charm-ribbon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+}
+
+/* Zoom Hint Badge on the Letter */
+.letter-zoom-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 182, 193, 0.8);
+  border-radius: 16px;
+  color: #6e1c3a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.letter-note-card:hover .letter-zoom-badge {
+  background: #ffffff;
+  transform: scale(1.08);
+}
+
+/* =========================================================
+   FULLSCREEN LETTER ZOOM MODAL
+   ========================================================= */
+.letter-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(18, 8, 14, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 16px;
+  animation: fadeIn 0.22s ease;
+}
+
+.letter-modal-card {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: modalScaleUp 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.letter-modal-close {
+  position: absolute;
+  top: -14px;
+  right: -8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #ffb6c1;
+  color: #6e1c3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.letter-modal-close:hover {
+  background: #ff4d88;
+  color: #ffffff;
+  transform: scale(1.12);
+}
+
+.letter-modal-img-container {
+  width: 100%;
+  overflow-y: auto;
+  max-height: 85vh;
+  display: flex;
+  justify-content: center;
+}
+
+.letter-modal-full-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5));
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* 2. Food Choice Section */
+.treats-selection-section {
+  position: relative;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.treats-heading {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #1a0f14;
+  margin: 0 0 10px 4px;
+  letter-spacing: -0.2px;
+}
+
+.treats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.treat-food-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 18px rgba(80, 20, 45, 0.12);
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: translateZ(0);
+}
+
+.treat-food-card:hover {
+  transform: translateY(-4px) scale(1.02) translateZ(0);
+  box-shadow: 0 12px 24px rgba(255, 77, 136, 0.25);
+}
+
+.treat-food-card.selected {
+  border: 2px solid #ff4d88;
+  box-shadow: 0 10px 26px rgba(255, 77, 136, 0.35);
+}
+
+.treat-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  background: radial-gradient(circle at 50% 50%, #fffbfc 0%, #fff2f5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 8px;
+  box-shadow: inset 0 0 8px rgba(255, 182, 193, 0.2);
+}
+
+.treat-food-img {
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+}
+
+.treat-food-card:hover .treat-food-img {
+  transform: scale(1.1);
+}
+
+.treat-card-info {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 2px 0 2px;
+}
+
+.treat-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.treat-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1a0f14;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.treat-heart-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  outline: none;
+  transition: transform 0.2s ease;
+}
+
+.treat-heart-btn:hover {
+  transform: scale(1.25);
+}
+
+/* Order Celebration Toast */
+.treat-order-toast {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  padding: 10px 18px;
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(45, 10, 25, 0.35);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: #4a1e2d;
+  font-weight: 600;
+  border: 1.5px solid #ffb6c1;
+  animation: modalScaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  white-space: nowrap;
+}
