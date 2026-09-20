@@ -17,7 +17,7 @@ import './InstagramGlassLink.css';
  */
 export default function InstagramGlassLink({
   href = "https://www.instagram.com/__bizzz___?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==",
-  username = "@__bizzz___",
+  username = "@__bizzz__",
   label = "Instagram",
   variant = "badge",
   floating = false,
