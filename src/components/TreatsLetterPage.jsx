@@ -415,7 +415,7 @@ export default function TreatsLetterPage({ onSparkle, onPlayAudio }) {
       {orderToast && (
         <div className="treat-order-toast">
           <Gift size={18} color="#ff3366" />
-          <span>Treat <b>{orderToast}</b> selected for Bijeyata! 💖✨</span>
+          <span>Treat <b>{orderToast}</b> Cute Treats For You </span>
         </div>
       )}
 
