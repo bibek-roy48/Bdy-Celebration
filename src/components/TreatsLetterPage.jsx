@@ -414,7 +414,7 @@ export default function TreatsLetterPage({ onSparkle, onPlayAudio }) {
           <div className="treats-social-footer" style={{ display: 'flex', justifyContent: 'center', marginTop: '16px', marginBottom: '8px' }}>
             <InstagramGlassLink
               variant="badge"
-              label="Birthday Girl 👑"
+              label=""
               onSparkle={onSparkle}
             />
           </div>
