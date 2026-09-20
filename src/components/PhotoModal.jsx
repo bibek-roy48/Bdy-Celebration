@@ -13,7 +13,7 @@ const photoData = [
   {
     src: '/assets/photo-mirror-bnw.png',
     frame: '/assets/frame-center.png',
-    caption: '“To the prettiest birthday queen in the whole universe! May your year be filled with endless joy, magic, and sweet love!”',
+    caption: '“”',
     title: 'Birthday Queen',
     isVideo: false,
   },

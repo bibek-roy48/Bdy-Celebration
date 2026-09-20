@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import confetti from 'canvas-confetti';
 import { Heart, Sparkles, Gift, X, ZoomIn } from 'lucide-react';
 import { sounds } from '../utils/audio';
+import InstagramGlassLink from './InstagramGlassLink';
 
 const FOOD_ITEMS = [
   {
@@ -407,6 +408,15 @@ export default function TreatsLetterPage({ onSparkle, onPlayAudio }) {
                 </div>
               );
             })}
+          </div>
+
+          {/* Social Instagram Glass Badge */}
+          <div className="treats-social-footer" style={{ display: 'flex', justifyContent: 'center', marginTop: '16px', marginBottom: '8px' }}>
+            <InstagramGlassLink
+              variant="badge"
+              label="Birthday Girl 👑"
+              onSparkle={onSparkle}
+            />
           </div>
         </div>
       </div>

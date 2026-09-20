@@ -7,6 +7,7 @@ import BalloonBanner from './components/BalloonBanner';
 import SparkleTrail from './components/SparkleTrail';
 import ScrapbookPage from './components/ScrapbookPage';
 import TreatsLetterPage from './components/TreatsLetterPage';
+import InstagramGlassLink from './components/InstagramGlassLink';
 import { Volume2, VolumeX, ChevronRight, ChevronLeft } from 'lucide-react';
 import './App.css';
 
@@ -98,6 +99,13 @@ export default function App() {
 
       {/* Main Phone UI Container */}
       <PhoneContainer>
+        {/* Modern Glassmorphic Instagram Social Icon/Link positioned on the left side */}
+        <InstagramGlassLink
+          floating={true}
+          position="bottom-left"
+          onSparkle={handleSparkle}
+        />
+
         {/* Subtle music toggle indicator in top-right */}
         <button
           className="music-toggle-btn"
