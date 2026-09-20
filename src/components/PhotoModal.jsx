@@ -6,22 +6,26 @@ const photoData = [
   {
     src: '/assets/photo-night-peace.png',
     frame: '/assets/frame-right.png',
-    caption: '“Forever making the sweetest memories together! Keep shining bright!”',
-    title: 'Sweet Memories',
+    caption: '“!”',
+    title: '',
     isVideo: false,
   },
   {
     src: '/assets/photo-mirror-bnw.png',
     frame: '/assets/frame-center.png',
     caption: '“”',
+<<<<<<< HEAD
     title: 'Birthday Queen',
+=======
+    title: '',
+>>>>>>> 9442b3e9a0d44535625cb8570868d40aacad17b0
     isVideo: false,
   },
   {
     src: '/assets/memory-video.mp4',
     frame: '/assets/frame-center.png',
-    caption: '“Capturing your magical radiant moments in motion! Always smiling, always beautiful!”',
-    title: 'Magical Moments',
+    caption: '“”',
+    title: '',
     isVideo: true,
   }
 ];

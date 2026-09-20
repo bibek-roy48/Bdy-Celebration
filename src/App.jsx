@@ -96,6 +96,15 @@ export default function App() {
         loop
         preload="auto"
       />
+      
+        {/* Main Phone UI Container */}
+      <PhoneContainer>
+        {/* Modern Glassmorphic Instagram Social Icon/Link positioned on the left side */}
+        <InstagramGlassLink
+          floating={true}
+          position="bottom-left"
+          onSparkle={handleSparkle}
+        />
 
       {/* Main Phone UI Container */}
       <PhoneContainer>

@@ -7,23 +7,23 @@ import InstagramGlassLink from './InstagramGlassLink';
 
 const FOOD_ITEMS = [
   {
-    id: 'toastie-pop',
-    name: 'Toastie Pop',
+    id: 'Bunny-Toast',
+    name: 'Bunny Toast',
     image: '/assets/food-bear-cookie.png',
   },
   {
-    id: 'kitty-cookie',
-    name: 'Kitty Cookie',
+    id: 'Choco-Milk',
+    name: 'Choco Milk',
     image: '/assets/food-choco-time.png',
   },
   {
-    id: 'mochi-crust',
-    name: 'Mochi Crust',
+    id: 'Mochi-Egg',
+    name: 'Mochi Egg',
     image: '/assets/food-egg-bowl.png',
   },
   {
-    id: 'yum-pocket',
-    name: 'Yum Pocket',
+    id: 'Paw-Soup',
+    name: 'Paw Soup',
     image: '/assets/food-bear-curry.png',
   },
 ];
@@ -425,7 +425,7 @@ export default function TreatsLetterPage({ onSparkle, onPlayAudio }) {
       {orderToast && (
         <div className="treat-order-toast">
           <Gift size={18} color="#ff3366" />
-          <span>Treat <b>{orderToast}</b> selected for Bijeyata! 💖✨</span>
+          <span>Treat <b>{orderToast}</b> Cute Treats For You </span>
         </div>
       )}
 
