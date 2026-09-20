@@ -14,11 +14,7 @@ const photoData = [
     src: '/assets/photo-mirror-bnw.png',
     frame: '/assets/frame-center.png',
     caption: '“”',
-<<<<<<< HEAD
     title: 'Birthday Queen',
-=======
-    title: '',
->>>>>>> 9442b3e9a0d44535625cb8570868d40aacad17b0
     isVideo: false,
   },
   {
