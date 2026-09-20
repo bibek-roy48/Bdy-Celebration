@@ -12,7 +12,7 @@ const FOOD_ITEMS = [
   },
   {
     id: 'kitty-cookie',
-    name: 'Kitty Cookie',
+    name: 'Kitty Cooki',
     image: '/assets/food-choco-time.png',
   },
   {
