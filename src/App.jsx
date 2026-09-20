@@ -7,7 +7,6 @@ import BalloonBanner from './components/BalloonBanner';
 import SparkleTrail from './components/SparkleTrail';
 import ScrapbookPage from './components/ScrapbookPage';
 import TreatsLetterPage from './components/TreatsLetterPage';
-import InstagramGlassLink from './components/InstagramGlassLink';
 import { Volume2, VolumeX, ChevronRight, ChevronLeft } from 'lucide-react';
 import './App.css';
 
