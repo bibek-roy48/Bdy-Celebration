@@ -92,7 +92,7 @@ export default function App() {
       {/* Background Audio Element */}
       <audio
         ref={audioRef}
-        src="/assets/my_girl.mp3"
+        src="/assets/love_story.mp3"
         loop
         preload="auto"
       />
