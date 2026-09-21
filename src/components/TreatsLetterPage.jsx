@@ -409,15 +409,6 @@ export default function TreatsLetterPage({ onSparkle, onPlayAudio }) {
               );
             })}
           </div>
-
-          {/* Social Instagram Glass Badge */}
-          <div className="treats-social-footer" style={{ display: 'flex', justifyContent: 'center', marginTop: '16px', marginBottom: '8px' }}>
-            <InstagramGlassLink
-              variant="badge"
-              label=""
-              onSparkle={onSparkle}
-            />
-          </div>
         </div>
       </div>
 
